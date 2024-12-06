@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Outfit;
+}
+body{
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* nav-bar */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 10px 100px;
+    color: #fff;
+}
+.nav-bar a img{
+    width: 70px;
+    height: 45px;
+    padding: 0px;
+}
+.nav-bar a{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.nav-bar-contents{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right:100px  
+}
+.nav-bar-contents a{
+    font-weight: 400;
+    padding: 5px;
+}
+.nav-bar-contents a:hover{
+    background-color: #ffffff7f;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.nav-bar-contents a i{
+    color: #fff;
+}
+.nav-bar-contents-signin-cart{
+    display: flex;
+    gap: 30px;
+    margin-right: 50px;
+}
+.nav-bar-contents-signin-cart i:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+/* Initial styling for the search bar */
+.nav-bar-search {
+    display: flex;
+    align-items: center;
+    background-color: #000000; /* Black background initially */
+    border-radius: 50px;
+    gap: 8px;
+    width: 40px; /* Small width to make the icon visible */
+    height: 35px;
+    padding: 5px 10px 5px 0px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+    overflow: hidden;
+    transform-origin: left;
+}
+
+/* Expanded search bar */
+.nav-bar-search.active {
+    width: 350px; /* Expanded width when active */
+    background-color: #fff; /* White background when active */
+}
+
+/* Search icon styling */
+.nav-bar-search-icon {
+    color: #ffffff; /* White icon initially */
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.4s ease;
+}
+
+/* Change icon color when search bar is active */
+.nav-bar-search.active .nav-bar-search-icon {
+    color: #000000; /* Black icon when active */
+}
+
+/* Input styling */
+.nav-search-input {
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    width: 100%;
+    transition: opacity 0.4s ease;
+    opacity: 0; /* Initially hidden */
+    color: #000; /* Text color in input */
+}
+
+/* Show input when active */
+.nav-bar-search.active .nav-search-input {
+    opacity: 1; /* Visible when active */
+}
+/* Navbar container styling */
+.nav-bar-drones {
+    display: flex;
+    font-size: x-small;
+    margin: 0 50px;
+    gap: 20px;
+    height: 80px;
+    background-color: #ffffff;
+    align-items: center; /* Center items vertically */
+}
+
+/* Style for each drone item */
+.nav-bar-drones div {
+    width: 100px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* Hover effect for each div */
+.nav-bar-drones div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image styling */
+.nav-bar-drones div a img {
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Add text fade-in effect on hover */
+.nav-bar-drones div:hover img {
+    opacity: 0.8; /* Make image slightly transparent when hovered */
+}
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .nav-bar-contents {
+        margin-right: 50px; /* Reduced margin for medium screens */
+    }
+    .nav-bar-search {
+        width: 400px; /* Adjust width */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align to the left */
+    }
+    .nav-bar-contents {
+        margin: 10px 0; /* Margin between elements */
+    }
+    .nav-bar-contents-signin-cart {
+        margin-right: 0; /* Remove right margin */
+    }
+    .nav-bar-search {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 10px; /* Reduce padding */
+    }
+    .nav-bar-contents {
+        flex-wrap: wrap; /* Wrap items if necessary */
+        justify-content: center; /* Center items */
+    }
+    .nav-bar-search {
+        width: 100%; /* Ensure search bar is full width */
+        height: 40px; /* Slightly larger height */
+    }
+    .nav-bar-drones {
+        display: flex; /* Show drones dropdown on mobile */
+        flex-direction: column; /* Stack items */
+        margin: 0; /* Remove margins */
+    }
+    .nav-bar-drones div {
+        width: auto; /* Auto width for drone items */
+    }
+}
+/* Homepage */
+/* Hero Section */
+.hero-content {
+    background: url('hero-bg.jpg') no-repeat center center / cover;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    padding: 0 20px;
+    position: relative;
+}
+.hero-content-text {
+    margin-top: 15%; /* Adjust this value to move the text above the center */
+}
+.background-clip {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Hero text styling */
+.hero-content-text h1 {
+    font-size: 3em;
+    margin: 0 0 20px;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.hero-content-text p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Hover effect for hero content text */
+.hero-content-text:hover h1, 
+.hero-content-text:hover p {
+    color: #fff;
+}
+
+/* Button styling */
+#product-btn {
+    background: #00eaff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#product-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero-content-text h1 {
+        font-size: 2.5em;
+    }
+    .hero-content-text p {
+        font-size: 1.1em;
+    }
+    #product-btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+    .hero-content-text h1 {
+        font-size: 2em;
+    }
+    .hero-content-text p {
+        font-size: 1em;
+    }
+    #product-btn {
+        padding: 7px 14px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 10px;
+    }
+    .hero-content-text h1 {
+        font-size: 1.8em;
+    }
+    .hero-content-text p {
+        font-size: 0.95em;
+    }
+    #product-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 414px) {
+    /* iPhone XR */
+    .hero-content {
+        height: 90vh;
+    }
+    .hero-content-text h1 {
+        font-size: 1.6em;
+        margin: 0 0 15px;
+    }
+    .hero-content-text p {
+        font-size: 0.85em;
+    }
+    #product-btn {
+        padding: 5px 10px;
+        font-size: 0.75em;
+    }
+}
+
+/* Header Slider */
+.header-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Adjust as needed */
+}
+
+.header-item {
+    min-width: 100%; /* Display one item at a time */
+    display: none; /* Initially hide all items */
+    height: 800px; /* Set height of each slide */  
+    opacity: 100;
+    animation: fadeIn 1s ease-out forwards; /* Apply the fade-in animation */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0.8; /* Start as fully transparent */
+    }
+    100% {
+        opacity: 1; /* Fade in to fully opaque */
+    }
+}
+
+
+.header-item > div {
+    width: 100%;
+    height: 100vh; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.header-item:first-child {
+    display: block; /* Show the first item initially */
+}
+
+.header-div {
+    max-width: 1500px;
+    height: 100vh;
+    
+}
+/* Center the text content */
+.header-item .bg-linear-gradient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Add padding if needed */
+    background-image: linear-gradient(to bottom, #000000 40%, transparent 100%);
+    
+}
+
+.header-item .bg-linear-gradient h1,
+.header-item .bg-linear-gradient h3,
+.header-item .bg-linear-gradient p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Enhances text visibility */
+    margin: 10px 0; /* Spacing between elements */
+}
+/* Initial state: elements are positioned above the container */
+.header-item .bg-linear-gradient h3,
+.header-item .bg-linear-gradient h1,
+.header-item .bg-linear-gradient p,
+.header-item .button-container button {
+    opacity: 0;
+    transform: translateY(-20px); /* Initially above the container */
+    animation: slideInFromTop 1s ease-out forwards; /* Apply animation */
+}
+
+/* Animation for sliding in from the top */
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Delay the animations for each element */
+.header-item .bg-linear-gradient h3 {
+    animation-delay: 0.1s; /* Delay for h3 */
+}
+
+.header-item .bg-linear-gradient h1 {
+    animation-delay: 0.3s; /* Delay for h1 */
+}
+
+.header-item .bg-linear-gradient p {
+    animation-delay: 0.5s; /* Delay for p */
+}
+
+.header-item .button-container button {
+    animation-delay: 0.7s; /* Delay for buttons */
+}
+/* Header buttons */
+.header-item .bg-linear-gradient button {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #ffffff; /* White border */
+    color: #ffffff; /* White text color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 5px 15px; /* Button padding */
+    font-size: 12px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+    margin: 10px; /* Adds space between buttons */
+}
+
+/* Hover effect */
+.header-item .bg-linear-gradient button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight white background on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.header-video {
+    width: 100%; /* Ensure the video takes full width */
+    height: auto;
+}
+
+/* Navigation Buttons */
+.header-slider a {
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+    padding: 4vh 1vw;
+    color: #0000007b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    background: #ffffff7f;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.control_next {
+    right: 0;
+}
+
+.control_prev {
+    left: 0;
+}
+
+/* Responsive Adjustments for Slider */
+@media (max-width: 1024px) {
+    .header-item {
+        height: 600px;
+    }
+    .header-slider a {
+        font-size: 14px;
+        padding: 1.5vh 1vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-item {
+        height: 500px;
+    }
+    .header-slider a {
+        font-size: 12px;
+        padding: 1vh 0.5vw;
+    }
+    .header-img {
+        mask-image: none; /* Remove the mask for better visibility on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-item {
+        height: 400px;
+    }
+    .header-slider a {
+        font-size: 10px;
+        padding: 0.8vh 0.5vw;
+    }
+    .control_prev,
+    .control_next {
+        top: 35%; /* Adjust for smaller viewports */
+    }
+}
+
+@media (max-width: 414px) {
+    .header-item {
+        height: 350px; /* Reduce height to fit screen better */
+    }
+    .header-slider a {
+        font-size: 10px;
+        padding: 0.5vh 0.5vw;
+    }
+    .control_prev,
+    .control_next {
+        top: 33%;
+    }
+    .header-img {
+        object-fit: cover; /* Ensures image is centered and fits nicely within smaller screen */
+    }
+}
+/* products section */
+.products {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f4f4f4;
+}
+.products h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product-item {
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 500px;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.product-item h5, .product-item h3,
+.product-item p{
+    z-index: 2;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Enhances text visibility */
+    margin: 10px 0;
+}
+.product-item p {
+    font-size: 0.9em;
+}
+
+.product-item .Learn-more {
+    margin-top: 10px;
+    color: #0056b3; /* Bright blue color */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.product-item .Learn-more:hover {
+    color: #004494; /* Darker blue on hover */
+}
+
+.product-item .Learn-more i {
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 100%;
+        height: 400px;
+    }
+}
+
+/* footer */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+}
+.footer-content div{
+    margin: 10px;
+    width: 350px;
+}
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+.footer-section p, .footer-section a {
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+}
+.footer-section a i{
+    padding: 5px;
+    border-radius: 50%;
+}
+.footer-section a i:hover {
+    background-color: #ffffff7f;
+    transition: 0.5s;
+}
+
+.footer-bottom {
+    background: #111;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+#facebook{
+    margin: 0 2px;
+}
+#twitter{
+    margin: 0 10px;
+}
+#intagram{
+    margin: 0 10px;
+}
+#youtube{
+    margin: 0 10px;
+}
+#facebook:hover i{
+    transform: scale(1.2);
+    transition: 0.3s;
+    
+}
+#youtube:hover i{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+#instagram:hover i{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+#twitter:hover i{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+#Mavic3proimg{
+    width: fit-content;
+    height: fit-content;
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+.product-list a h3{
+    text-decoration: none;
+}
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .footer-content {
+        justify-content: center; /* Center items on medium screens */
+    }
+    .footer-content div {
+        width: 300px; /* Slightly smaller width */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align */
+    }
+    .footer-content div {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 350px; /* Limit width to maintain design */
+    }
+    #facebook,
+    #twitter,
+    #instagram,
+    #youtube {
+        margin: 0 5px; /* Adjust margins for social icons */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 5px 0; /* Reduce padding */
+    }
+    .footer-section h3 {
+        font-size: 1.2em; /* Smaller headings */
+    }
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.9em; /* Smaller text for mobile */
+    }
+}
